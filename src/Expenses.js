@@ -15,7 +15,7 @@ class Expenses extends Component {
         expensedate: new Date(),
         description: '',
         location: '',
-        category: {id: 2, name: "Auto Loan"}
+        category: {id: 1, name: "Travel"}
     }
 
     constructor(props) {
@@ -30,6 +30,7 @@ class Expenses extends Component {
          this.handleSubmit = this.handleSubmit.bind(this);
          this.handleChange = this.handleChange.bind(this);
          this.handleDateChange = this.handleDateChange.bind(this);
+         this.handleCategoryChange = this.handleCategoryChange.bind(this);
     }
     
 
@@ -71,13 +72,14 @@ class Expenses extends Component {
             });
             const body = await response.json();
             console.log(body);
-            console.log(body);
-            this.setState(prevState => ({
-                expense : {
-                    ...prevState.expense,
-                    category : body
+            this.setState(state => {
+                return {
+                    expense : {
+                        ...state.expense,
+                        category : body
+                    }
                 }
-            }));
+            });
             console.log(this.state.expense);
          } catch (error) {
              console.log(error);
