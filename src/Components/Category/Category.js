@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AppNav from './AppNav';
+import AppNav from '../AppNav/AppNav';
 import {Container, Input, Button, Label, Form, FormGroup, Table} from 'reactstrap'
 import {Link} from 'react-router-dom'
 
